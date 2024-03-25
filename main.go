@@ -1,14 +1,17 @@
 package main
 
 import (
+	"microgreens/chaincodeactions"
+	"microgreens/cli"
 	"os"
 	"time"
 
-	"chaincodeactions" // Adjust the import path according to your project structure
-	"cli" // Adjust the import path according to your project structure
-
 	"github.com/hyperledger/fabric-gateway/pkg/client"
+	"github.com/hyperledger/fabric-gateway/pkg/identity"
+	"github.com/hyperledger/fabric-protos-go-apiv2/gateway"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/status"
 )
 
 func main() {
