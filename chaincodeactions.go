@@ -1,4 +1,4 @@
-package main
+package chaincodeactions
 
 import (
 	"bytes"
@@ -195,7 +195,6 @@ func (ca *ChaincodeActions) QueryBatch(batchID string) string {
 	// Any error that originates from a peer or orderer node external to the gateway will have its details
 	// embedded within the gRPC status error. The following code shows how to extract that.
 	statusErr := status.Convert(err)
-
 	details := statusErr.Details()
 	if len(details) > 0 {
 		fmt.Println("Error Details:")
