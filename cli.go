@@ -1,16 +1,14 @@
-package main
+package cli
 
 import (
 	"bufio"
 	"fmt"
+	"microgreens/chaincodeactions"
 	"os"
 	"strconv"
-	"strings"
-
-	"github.com/Mattddixo/greens/chaincodeactions" // Update this import path as necessary.
 )
 
-func runCLI(actions *chaincodeactions.ChaincodeActions) {
+func RunCLI(actions *chaincodeactions.ChaincodeActions) {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for {
@@ -101,11 +99,4 @@ func handleQueryOptions(scanner *bufio.Scanner, actions *chaincodeactions.Chainc
 	default:
 		fmt.Println("Invalid query type.")
 	}
-}
-
-func main() {
-	// Assuming that the actions object is correctly initialized and passed from main.go
-	// This is a placeholder. Ensure that you adjust your main.go accordingly.
-	var actions *chaincodeactions.ChaincodeActions
-	runCLI(actions)
 }
